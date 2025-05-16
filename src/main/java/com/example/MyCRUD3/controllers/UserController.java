@@ -20,16 +20,16 @@ public class UserController {
     public String showUsers(@RequestParam(value = "id", defaultValue = "0") int id, ModelMap model) {
         if (id != 0) {
             model.addAttribute("user", userService.getUser(id));
-            return "user";
+            return "pages/user";
         }
         model.addAttribute("users", userService.getUsers());
-        return "users";
+        return "pages/users";
     }
 
     @GetMapping("/new")
     public String newUser(ModelMap modelMap) {
         modelMap.addAttribute("user", new User());
-        return "new";
+        return "pages/new";
     }
 
     @PostMapping("save")
@@ -41,7 +41,7 @@ public class UserController {
     @GetMapping("/edit")
     public String edit(@RequestParam(value = "id", defaultValue = "0") int id, ModelMap model) {
         model.addAttribute("user", userService.getUser(id));
-        return "edit";
+        return "pages/edit";
     }
 
     @PostMapping("update")

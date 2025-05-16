@@ -9,9 +9,9 @@
 <body>
 
 <form th:method="POST" th:action="@{/users/update?id={id}(id=${user.getId()})}" th:object="${user}">
-  <label for="name">Enter name: </label>
-  <input type="text" th:field="*{name}" id="name"/>
-  <br/>
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
     <label for="lastName">Enter lastName: </label>
     <input type="text" th:field="*{lastName}" id="lastName"/>
     <br/>
@@ -21,7 +21,7 @@
     <label for="weight">Enter weight: </label>
     <input type="text" th:field="*{weight}" id="weight"/>
     <br/>
-  <input type="submit" value="Update!"/>
+    <input type="submit" value="Update!"/>
 </form>
 
 </body>
